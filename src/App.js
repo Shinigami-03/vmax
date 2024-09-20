@@ -1,11 +1,15 @@
-import React from 'react';
-import Login from './Pages/login'; // Adjusting path to your Login component
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './Pages/login';
+import SignUp from './Pages/Signup';
 
 const App = () => {
     return (
-        <div>
-            <Login />
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/Signup" element={<SignUp />} />
+                <Route path="/" element={<Login />} />
+            </Routes>
+        </Router>
     );
 };
 

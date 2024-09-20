@@ -1,9 +1,9 @@
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
-    overflow: hidden; /* Prevent scrolling */
-    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
 }
 
 body::before {
@@ -13,25 +13,24 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../Assests/background_1.png'); /* Update this path to your image */
+    background-image: url('../Assets/background_1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(2px); /* Apply blur */
-    z-index: -1; /* Ensure it's behind other content */
+    filter: blur(2px);
+    z-index: -1;
 }
 
 .login-container {
     width: 350px;
     margin: 100px auto;
-    padding: 20px 40px; /* Adjusted padding */
+    padding: 20px 40px;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
-    color: rgb(255, 255, 255); /* Set text color to white for better visibility */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
 }
-
 
 h2 {
     text-align: center;
@@ -46,25 +45,30 @@ h2 {
 
 .input-icon {
     position: relative;
+    width: 100%;
 }
 
 .input-icon i {
     position: absolute;
-    left: 15px; /* Adjusted for better alignment */
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #aaa; /* Icon color */
+    color: #aaa;
 }
 
 input {
-    width: calc(90% - 20px);
+    width: 100%;
     padding: 15px;
-    padding-left: 40px; /* Adjust padding for icon */
-    margin: 5px 0; /* Centered margins */
+    padding-left: 40px;
+    margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px; /* Increased font size for better visibility */
+    font-size: 16px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #aaa;
 }
 
 input:focus {
@@ -74,7 +78,7 @@ input:focus {
 }
 
 button {
-    width: 100%; /* Match input width */
+    width: 100%;
     padding: 15px;
     background-color: #007bff;
     color: white;
@@ -84,7 +88,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     font-weight: bold;
-    margin-top: 10px; /* Add some space above the button */
+    margin-top: 10px;
 }
 
 button:hover {
@@ -102,49 +106,41 @@ button:hover {
 .remember-me {
     display: flex;
     align-items: center;
-    font-size: 14px; /* Adjust font size if necessary */
-    color:white; /* Text color */
+    font-size: 14px;
+    color: white;
 }
 
 .remember-me input {
-    margin-right: 10px; /* Space between checkbox and label */
+    margin-right: 10px;
 }
 
 .forgot-password {
-    color: white; /* Change to white */
+    color: white;
     cursor: pointer;
-    font-size: 14px; /* Adjust font size if necessary */
-    transition: color 0.3s; /* Transition for color change */
+    font-size: 14px;
+    transition: color 0.3s;
 }
 
 .forgot-password:hover {
-    color: #007bff; /* Change to blue on hover */
+    color: #007bff;
 }
-
 
 .signup-link {
     text-align: center;
     margin-top: 15px;
-    color: white; /* Make the text white */
+    color: white;
 }
 
 .signup-link a {
-    color: white; /* Initially, "Sign Up" text is also white */
+    color: white;
     text-decoration: none;
-    transition: color 0.3s; /* Smooth transition for hover effect */
+    transition: color 0.3s;
 }
 
 .signup-link a:hover {
-    color: #007bff; /* Change "Sign Up" text to blue on hover */
+    color: #007bff;
 }
 
-
-input::placeholder {
-    color: #aaa;
-    opacity: 1;
-}
-
-/* Media queries for responsiveness */
 @media (max-width: 480px) {
     .login-container {
         width: 90%;

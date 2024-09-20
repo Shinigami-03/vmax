@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase'; // Importing auth from firebase.js
 import '../Styles/login.css'; // Ensure this path is correct
 import 'font-awesome/css/font-awesome.min.css'; // Import Font Awesome
 
@@ -6,17 +8,27 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Email:', email);
-        console.log('Password:', password);
-        console.log('Remember Me:', rememberMe);
+        setError('');
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log('User logged in:', user);
+            })
+            .catch((error) => {
+                setError('Failed to login. Please check your credentials.');
+                console.error('Error logging in:', error.message);
+            });
     };
 
     return (
         <div className="login-container">
             <h2>Welcome Back</h2>
+            {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <div className="input-icon">

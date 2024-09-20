@@ -1,73 +1,148 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e9ecef; /* Soft background color */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    overflow: hidden; /* Prevent scrolling */
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../Assests/background_1.png'); /* Update this path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px); /* Apply blur */
+    z-index: -1; /* Ensure it's behind other content */
 }
 
 .login-container {
-    width: 400px;
+    width: 350px;
     margin: 100px auto;
-    padding: 30px;
-    border: 1px solid #ced4da; /* Lighter border color */
-    border-radius: 15px; /* More rounded edges */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Softer shadow */
-    background-color: white;
+    padding: 20px 40px; /* Adjusted padding */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #343a40; /* Darker text color */
+    color: #333;
+    font-size: 24px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 15px; /* Adjusted for better alignment */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa; /* Icon color */
 }
 
 input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ced4da; /* Lighter border color */
-    border-radius: 15px; /* Rounded edges */
-    font-size: 14px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+    width: calc(90% - 20px);
+    padding: 15px;
+    padding-left: 40px; /* Adjust padding for icon */
+    margin: 5px 0; /* Centered margins */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Increased font size for better visibility */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
     border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
+    width: 100%; /* Match input width */
+    padding: 15px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 15px; /* Rounded edges */
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    margin-top: 10px; /* Add some space above the button */
 }
 
 button:hover {
     background-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    transform: translateY(-2px);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* Adjust font size if necessary */
+    color: #333; /* Text color */
+}
+
+.remember-me input {
+    margin-right: 10px; /* Space between checkbox and label */
 }
 
 .forgot-password {
     color: #007bff;
     cursor: pointer;
-    text-align: right; /* Aligns the link to the right */
+    font-size: 14px; /* Adjust font size if necessary */
+    text-decoration: underline; /* Underline for emphasis */
+    transition: color 0.3s; /* Transition for color change */
 }
 
 .forgot-password:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
     text-decoration: underline;
 }
 
 input::placeholder {
-    color: #aaa; /* Placeholder text color */
-    opacity: 1; /* Ensure the placeholder is fully opaque */
+    color: #aaa;
+    opacity: 1;
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+    }
+}

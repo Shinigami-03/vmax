@@ -28,13 +28,15 @@ body::before {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    color: rgb(255, 255, 255); /* Set text color to white for better visibility */
 }
+
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: white;
     font-size: 24px;
 }
 
@@ -101,7 +103,7 @@ button:hover {
     display: flex;
     align-items: center;
     font-size: 14px; /* Adjust font size if necessary */
-    color: #333; /* Text color */
+    color:white; /* Text color */
 }
 
 .remember-me input {
@@ -109,31 +111,33 @@ button:hover {
 }
 
 .forgot-password {
-    color: #007bff;
+    color: white; /* Change to white */
     cursor: pointer;
     font-size: 14px; /* Adjust font size if necessary */
-    text-decoration: underline; /* Underline for emphasis */
     transition: color 0.3s; /* Transition for color change */
 }
 
 .forgot-password:hover {
-    color: #0056b3; /* Darker color on hover */
+    color: #007bff; /* Change to blue on hover */
 }
+
 
 .signup-link {
     text-align: center;
     margin-top: 15px;
-    color: #007bff;
+    color: white; /* Make the text white */
 }
 
 .signup-link a {
-    color: #007bff;
+    color: white; /* Initially, "Sign Up" text is also white */
     text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for hover effect */
 }
 
 .signup-link a:hover {
-    text-decoration: underline;
+    color: #007bff; /* Change "Sign Up" text to blue on hover */
 }
+
 
 input::placeholder {
     color: #aaa;

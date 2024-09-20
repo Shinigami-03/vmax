@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Soft background color */
+}
+
+.login-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid #ced4da; /* Lighter border color */
+    border-radius: 15px; /* More rounded edges */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    background-color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40; /* Darker text color */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ced4da; /* Lighter border color */
+    border-radius: 15px; /* Rounded edges */
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on focus */
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 15px; /* Rounded edges */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.forgot-password {
+    color: #007bff;
+    cursor: pointer;
+    text-align: right; /* Aligns the link to the right */
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+input::placeholder {
+    color: #aaa; /* Placeholder text color */
+    opacity: 1; /* Ensure the placeholder is fully opaque */
+}
+
